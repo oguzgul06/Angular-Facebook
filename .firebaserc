@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angularfacebook-7c4a0": {
+      "hosting": {
+        "facebook-clone": [
+          "angularfacebook-7c4a0"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angularfacebook-7c4a0"
+  }
+}
