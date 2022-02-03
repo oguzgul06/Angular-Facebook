@@ -2,7 +2,7 @@
   <header class="login__header">
     <div class="login__header__left">
       <img
-        src="https://marka-logo.com/wp-content/uploads/2020/04/Facebook-Logo.png"
+        src="https://github.com/bhaikaju/facebook-clone/blob/master/src/assets/fb-logo-1.jpg?raw=true"
         alt="facebook-logo"
       />
       <h2>
@@ -11,7 +11,7 @@
     </div>
     <div class="login__header__right">
       <mat-card class="login__header__right__card">
-        <mat-card-content>
+        <mat-card-content class="login__header__right__card__content">
           <form #form="ngForm" class="login-form" (ngSubmit)="login(form)">
             <input
               type="text"
@@ -24,14 +24,16 @@
               type="password"
               name="password"
               ngMOdel
-              placeholder="pasword"
+              placeholder="Password"
               required
             />
             <button
               type="submit"
               class="login-button"
               [disabled]="form.invalid || form.pending"
-            ></button>
+            >
+              Log in
+            </button>
           </form>
           <a href="#">Forgotten account?</a>
           <button class="create-account" (click)="openRegister()">
@@ -39,7 +41,16 @@
           </button>
         </mat-card-content>
       </mat-card>
-      <p class="tagline">Create a Page for a celebrity, band or business.</p>
+      <p class="tagline">
+        <strong>Create a Page</strong> for a celebrity, band or business.
+      </p>
     </div>
   </header>
+
+  <footer class="login__footer">
+    <img
+      src="https://github.com/bhaikaju/facebook-clone/blob/master/src/assets/footer_crop.jpg?raw=true"
+      alt="footer"
+    />
+  </footer>
 </div>
