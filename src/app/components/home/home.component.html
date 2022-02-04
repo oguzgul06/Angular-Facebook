@@ -2,19 +2,16 @@
   <div class="home__header">
     <div class="home__header__left">
       <img
-        src="https://github.com/bhaikaju/facebook-clone/blob/master/src/assets/fb-head.jpg?raw=true"
-        alt="fb-logo"
         mat-card-avatar
+        src="https://github.com/bhaikaju/facebook-clone/blob/master/src/assets/fb-head.jpg?raw=true"
       />
-
       <div class="input">
-        <mat-icon class="search-icon">search</mat-icon>
+        <mat-icon class="search-icon">search_outline</mat-icon>
         <form>
-          <input type="text" placeholder="Search Facebook" />
+          <input placeholder="Search Facebook" type="text" />
         </form>
       </div>
     </div>
-
     <div class="home__header__middle">
       <div class="active">
         <mat-icon>home</mat-icon>
@@ -32,17 +29,15 @@
         <mat-icon>flag</mat-icon>
       </div>
     </div>
-
-    <div class="home__header__rigth">
+    <div class="home__header__right">
       <div>
         <img
-          src="https://avatars.githubusercontent.com/u/72518895?v=4"
-          alt="avatar"
+          alt=""
           mat-card-avatar
+          src="https://avatars.githubusercontent.com/u/72518895?v=4"
         />
-        <span class="name">MY NAME</span>
+        <span class="name"></span>
       </div>
-
       <div>
         <mat-icon>add</mat-icon>
       </div>
@@ -53,41 +48,39 @@
           matBadgeColor="primary"
           matBadgeOverlap="false"
           matBadgePosition="above after"
-          >forum</mat-icon
         >
+          forum
+        </mat-icon>
       </div>
 
       <div>
-        <mat-icon
-          matBadge="3"
-          matBadgeColor="warn"
-          matBadgeOverlap="false"
-          matBadgePosition="above after"
-          >notifications</mat-icon
-        >
+        <mat-icon matBadge="3" matBadgeColor="warn" matBadgeOverlap="false"
+          >notifications
+        </mat-icon>
+      </div>
+
+      <div>
+        <mat-icon [matMenuTriggerFor]="menu">expand_more</mat-icon>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item><mat-icon>exit_to_app</mat-icon> Logout</button>
+        </mat-menu>
       </div>
     </div>
-
-    <mat-icon [matMenuTriggerFor]="menu">expand_more</mat-icon>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item><mat-icon>exit_to_app</mat-icon> Logout</button>
-    </mat-menu>
   </div>
 
-  <!-- Headers end here -->
   <div class="home__body">
     <div class="home__body__sidebarLeft">
       <div class="inside">
         <div class="user-avatar">
           <img
-            src="https://github.com/bhaikaju/facebook-clone/blob/master/src/assets/feed.jpg?raw=true"
             alt="feed"
+            mat-card-avatar
+            src="https://github.com/bhaikaju/facebook-clone/blob/master/src/assets/feed.jpg?raw=true"
           />
-          <span class="name">NAME HERE</span>
+          <span class="name">name</span>
         </div>
-
         <div>
-          <mat-icon>local_hospital</mat-icon>
+          <mat-icon> local_hospital</mat-icon>
           <span class="covid">COVID-19 Information Center</span>
         </div>
 
@@ -102,8 +95,13 @@
         </div>
 
         <div>
-          <mat-icon>chat</mat-icon>
-          <span>Messanger</span>
+          <mat-icon> chat</mat-icon>
+          <span>Messenger</span>
+        </div>
+
+        <div>
+          <mat-icon>store</mat-icon>
+          <span>Marketplace</span>
         </div>
 
         <div>
@@ -120,15 +118,16 @@
 
     <div class="home__body__contentMiddle">
       <div class="home__body__contentMiddle__top">
+        <!--IMAGE CARDS-->
         <mat-card *ngFor="let i of images" class="image-card">
-          <img src="{{ i }}" alt="bg" class="bg" />
+          <img alt="bg" class="bg" src="{{ i }}" />
           <mat-card-content>
             <img
               alt="avatar"
               class="avatar"
               src="https://avatars.githubusercontent.com/u/72518895?v=4"
             />
-            <span class="card-name">Oguz GÜL</span>
+            <span class="card-name">Oğuz GÜL</span>
           </mat-card-content>
         </mat-card>
       </div>
@@ -139,7 +138,7 @@
             class="post-message-header"
             style="padding-bottom: 20px; border-bottom: 1px solid lightgray"
           >
-            <img [src]="" alt="userPhoto" mat-card-avatar />
+            <img alt="" mat-card-avatar [src]="" />
             <form #form="ngForm" (ngSubmit)="postMessage(form)">
               <input
                 class="on-your-mind"
@@ -151,7 +150,6 @@
               <button style="display: none" type="submit"></button>
             </form>
           </mat-card-header>
-
           <mat-card-content class="card-body">
             <div>
               <mat-icon color="accent">videocam</mat-icon>
@@ -171,26 +169,26 @@
         </mat-card>
 
         <!--Loop Through All Posts From Database and Display-->
-        <mat-card class="posts">
+        <!-- <mat-card *ngFor="let p of posts" class="posts">
           <mat-card-header class="posts__header">
-            <img src="" alt="" mat-card-avatar />
-            <div class="posts__header__rigth">
-              <span>Time</span>
-              <h3>Title</h3>
+            <img alt="{{ p?.title }}" mat-card-avatar [src]="p?.avatar" />
+            <div class="posts__header__right">
+              <span>{{ p?.time?.seconds * 1000 | date: "shortTime" }}</span>
+              <h3>{{ p?.title }}</h3>
             </div>
           </mat-card-header>
           <mat-card-content class="posts__body">
-            <p>Message</p>
+            <p>{{ p?.message }}</p>
           </mat-card-content>
-        </mat-card>
+        </mat-card> -->
       </div>
     </div>
 
     <div class="home__body__feedRight">
       <div class="inside">
         <img
-          src="https://github.com/bhaikaju/facebook-clone/blob/master/src/assets/feed.jpg?raw=true"
           alt="feed"
+          src="https://github.com/bhaikaju/facebook-clone/blob/master/src/assets/feed.jpg?raw=true"
         />
       </div>
     </div>
