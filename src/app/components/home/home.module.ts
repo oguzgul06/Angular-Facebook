@@ -1,9 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { MaterialModule } from 'src/app/shared/material-flag/material.module';
 import { HomeComponent } from './home.component';
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, MaterialModule],
   exports: [],
   declarations: [HomeComponent],
   providers: [],
