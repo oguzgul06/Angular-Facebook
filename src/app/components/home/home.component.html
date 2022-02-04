@@ -124,6 +124,7 @@
               class="avatar"
               src="https://scontent.fdel8-1.fna.fbcdn.net/v/t1.0-1/cp0/p50x50/15078703_10211571832470683_2854551810050518303_n.jpg?_nc_cat=105&_nc_sid=7206a8&_nc_ohc=YSQBDLYrXHgAX_7KBWW&_nc_ht=scontent.fdel8-1.fna&oh=298837f1c1ebe1f884ce2525d31f39b1&oe=5F6F741A"
             />
+            <span class="card-name">Oguz GÜL</span>
           </mat-card-content>
         </mat-card>
       </div>
@@ -134,7 +135,7 @@
             class="post-message-header"
             style="padding-bottom: 20px; border-bottom: 1px solid lightgray"
           >
-            <img src="" alt="userPhoto" mat-card-avatar />
+            <img [src]="" alt="userPhoto" mat-card-avatar />
             <form #form="ngForm" (ngSubmit)="postMessage(form)">
               <input
                 class="on-your-mind"
@@ -166,7 +167,27 @@
         </mat-card>
 
         <!--Loop Through All Posts From Database and Display-->
-        <mat-card> </mat-card>
+        <mat-card class="posts">
+          <mat-card-header class="posts__header">
+            <img src="" alt="" mat-card-avatar />
+            <div class="posts__header__rigth">
+              <span>Time</span>
+              <h3>Title</h3>
+            </div>
+          </mat-card-header>
+          <mat-card-content class="posts__body">
+            <p>Message</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+    <div class="home__body__feedRight">
+      <div class="inside">
+        <img
+          src="https://github.com/bhaikaju/facebook-clone/blob/master/src/assets/feed.jpg?raw=true"
+          alt="feed"
+        />
       </div>
     </div>
   </div>
