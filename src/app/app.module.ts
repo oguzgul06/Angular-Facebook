@@ -8,6 +8,10 @@ import { HomeModule } from './components/home/home.module';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { MaterialModule } from './shared/material-flag/material.module';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { environment } from '../environments/environment.prod';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, RegisterComponent],
@@ -18,6 +22,9 @@ import { MaterialModule } from './shared/material-flag/material.module';
     MaterialModule,
     FormsModule,
     HomeModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

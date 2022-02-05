@@ -20,5 +20,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  postMessage(form: NgForm) {}
+  postMessage(form: NgForm) {
+    console.log(form.value);
+  }
 }
